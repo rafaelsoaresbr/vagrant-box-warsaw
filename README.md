@@ -15,6 +15,7 @@ O warsaw observa se está ou não numa VM, então é essencial fazê-lo pensar q
 A princípio, o warsaw checa os seguintes arquivos:
 
 `/sys/devices/system/cpu/online`
+
 `/sys/devices/virtual/dmi/id/modalias` 
 
 O primeiro arquivo informa quantos cores o processador tem. 
@@ -30,11 +31,13 @@ Por padrão, as máquinas virtuais não simulam essas informações. Um exemplo 
 ## Dependências
 
 `vagrant`
+
 `python`
 
 ## Como usar:
 
 `$ python pre.py Vagrantfile.template > Vagrantfile`
+
 `$ vagrant up`
 
 Vai demorar um pouco.
@@ -50,13 +53,17 @@ Se tudo ocorrer ok, a máquina virtual irá reiniciar e uma janela do firefox ir
 Pra testar se deu tudo certo mesmo, acesse a página de diagnóstico do warsaw ou do seu banco:
 
 http://www.gastecnologia.com.br:8080/diagnostico/index.jsp
+
 https://imagem.caixa.gov.br/asc/diagnostico.htm
 
 ## Links úteis:
 
 http://blog.michaelboman.org/2014/01/making-virtualbox-nearly-undetectable.html
+
 http://www.sysdig.org/wiki/sysdig-user-guide/
+
 http://people.skolelinux.org/pere/blog/Modalias_strings___a_practical_way_to_map__stuff__to_hardware.html
+
 https://www.virtualbox.org/manual/ch09.html#changedmi
 
 ## TODO:
