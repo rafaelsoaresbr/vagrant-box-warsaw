@@ -30,6 +30,8 @@ Por padrão, as máquinas virtuais não simulam essas informações. Um exemplo 
 
 ## Dependências
 
+`VirtualBox`
+
 `vagrant`
 
 `python`
