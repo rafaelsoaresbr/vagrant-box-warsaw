@@ -71,3 +71,4 @@ https://www.virtualbox.org/manual/ch09.html#changedmi
 ## TODO:
 
 - Endurecer a máquina virtual.
+- Adicionar suporte ao docker.
