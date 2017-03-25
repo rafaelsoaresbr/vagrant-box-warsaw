@@ -34,7 +34,7 @@ Por padrão, as máquinas virtuais não simulam essas informações. Um exemplo 
 
 `vagrant`
 
-`python`
+`python (2 ou 3)`
 
 ## Como usar:
 

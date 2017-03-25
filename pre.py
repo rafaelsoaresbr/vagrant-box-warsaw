@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 import sys
 
@@ -27,7 +27,7 @@ prefixo = "VBoxInternal/Devices/pcbios/0/Config/"
 indentacao = '    '
 customizes = indentacao + '### gerado pelo {0} \n'.format(sys.argv[0])
 
-for key, value in dmi.iteritems():
+for (key, value) in dmi.items():
   sufixo = value[0]
   valor = (value[1])[len(key):]
   
