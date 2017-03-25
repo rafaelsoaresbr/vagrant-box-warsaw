@@ -54,7 +54,7 @@ Se tudo ocorrer ok, a máquina virtual irá reiniciar e uma janela do firefox ir
 
 Pra testar se deu tudo certo mesmo, acesse a página de diagnóstico do warsaw ou do seu banco:
 
-http://www.gastecnologia.com.br:8080/diagnostico/index.jsp
+http://www.dieboldnixdorf.com.br/warsaw
 
 https://imagem.caixa.gov.br/asc/diagnostico.htm
 
