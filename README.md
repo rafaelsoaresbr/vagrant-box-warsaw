@@ -1,62 +1,48 @@
-# warsawvm
+# vagrant-box-warsaw
 
 ## O que é:
 
-Tentativa de automatizar a instalação do warsaw (infame módulo de segurança dos bancos) em máquinas virtuais.
+É um ambiente [Vagrant](https://www.vagrantup.com/downloads.html) que inclui a
+base Ubuntu e o navegador Firefox com o módulo de segurança Warsaw pronto para
+acessar sites bancários (testado com o BB).
 
 ## Como funciona:
 
-Olhando o código fonte - sim você **deve** olhar, principalmente tratando-se de dados tão sensíveis quanto os bancários - 
-dá pra sacar quase tudo.
-
-O pulo do gato tá na simulação de alguns dados referentes à BIOS.
-O warsaw observa se está ou não numa VM, então é essencial fazê-lo pensar que não está.
-
-A princípio, o warsaw checa os seguintes arquivos:
-
-`/sys/devices/system/cpu/online`
-
-`/sys/devices/virtual/dmi/id/modalias` 
-
-O primeiro arquivo informa quantos cores o processador tem. 
-Que computador moderno o suficiente pra rodar o warsaw possui apenas 1 core (configuração padrão do virtualbox)? Então...
-Apesar disso, não tenho certeza se isso afetou o funcionamento do warsaw.
-
-O segundo arquivo possui várias informações a repeito do hardware (fabricante, modelo) e da BIOS (fabricante, versão).
-Essas informações são providas pela DMI e estão gravadas na ROM da sua máquina.
-Por padrão, as máquinas virtuais não simulam essas informações. Um exemplo desse arquivo numa VM do virtualbox:
-
-`dmi:bvninnotekGmbH:bvrVirtualBox:bd12/01/2006:svninnotekGmbH:pnVirtualBox:pvr1.2:rvnOracleCorporation:rnVirtualBox:rvr1.2:cvnOracleCorporation:ct1:cvr:`
+Vagrant é uma ferramenta para construir e gerenciar ambientes em máquinas virtuais.
+Com um simples comando você pode configurar, reproduzir e portar ambientes de
+trabalho.
 
 ## Dependências
 
-`VirtualBox`
+1. [VirtualBox com Pacote de Extensões](https://www.virtualbox.org/wiki/Downloads)
 
-`vagrant`
-
-`python (2 ou 3)`
+2. [Vagrant](https://www.vagrantup.com/downloads.html)
 
 ## Como usar:
 
-`$ python pre.py Vagrantfile.template > Vagrantfile`
-
 `$ vagrant up`
 
-Vai demorar um pouco.
+>Este comando subirá uma máquina virtual rodando o Ubuntu 16.04 que será provida
+com os softwares necessários para acessar a página do seu banco.
 
-O arquivo pre.py pega informações da DMI da sua máquina (host) e gera um Vagrantfile, que irá passar essas infos para a máquina virtual.
+Para salvar seus arquivos (comprovantes, extratos, etc) basta você salva-los na
+pasta Downloads dentro da máquina virtual que está mapeada para a pasta /dados
+dentro desse projeto (máquina hospedeira).
 
-A VM tem uns 415 MB, mas só é preciso baixá-la uma vez.
+Após o uso você pode encerrar a máquina com o comando `vagrant halt`.
 
-As atualizações, dependências e warsaw somam uns 80 MB.
+Se preferir você pode apagar completamente a máquina virtual com `vagrant destroy`.
 
-Se tudo ocorrer ok, a máquina virtual irá reiniciar e uma janela do firefox irá aparecer (dentro da VM, claro).
-
-Pra testar se deu tudo certo mesmo, acesse a página de diagnóstico do warsaw ou do seu banco:
+Pra testar se deu tudo certo mesmo, acesse a página de diagnóstico do warsaw ou
+do seu banco:
 
 http://www.dieboldnixdorf.com.br/warsaw
 
 https://imagem.caixa.gov.br/asc/diagnostico.htm
+
+## Projeto original
+
+https://github.com/dinorox/warsawvm
 
 ## Links úteis:
 
